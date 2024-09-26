@@ -31,11 +31,15 @@ function donationCalc(donateBtn, leftMoney, totalDonate, donation, modalOpen, mo
 
              //  Modal integration
             //  Modal Opening
+            // document.getElementById("body").classList.add('bg-gray-300', 'opacity-30');
              document.getElementById(modalOpen).classList.remove('hidden');
+             document.getElementById("blur").classList.remove('hidden');
+            //  document.getElementsByTagName("body").classList.add('blur-md');
             
             //  Modal Closing 
             document.getElementById(modalClose).addEventListener('click', function() {
                 document.getElementById(modalOpen).classList.add('hidden');
+                document.getElementById("blur").classList.add('hidden');
             });
 
             //  History part
