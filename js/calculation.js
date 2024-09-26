@@ -13,14 +13,11 @@ function textValue(id){
 // donation calculation 
 function donationCalc(donateBtn, leftMoney, totalDonate, donation){
     document.getElementById(donateBtn).addEventListener("click", function(){
-        // let noakhaliDonation = parseFloat(document.getElementById("donation1").value);
-        // let feniDonation = parseFloat(document.getElementById("donation2").value);
-        // let movementDonation = parseFloat(document.getElementById("donation3").value);
 
         let totalBalance = textValue(leftMoney);
         let totalDonation = textValue(totalDonate);
         let myDonation = inputValue(donation); 
-        let count = 1;
+
         if(!isNaN(myDonation) && myDonation > 0 && totalBalance > myDonation){
             
             // Donation amount calcualtion
@@ -30,8 +27,6 @@ function donationCalc(donateBtn, leftMoney, totalDonate, donation){
              document.getElementById(leftMoney).innerText = totalBalance;
              document.getElementById(totalDonate).innerText = totalDonation;
              document.getElementById(donation).value = '';
-             count +=1;
-
 
             //  History part
             const historyItem = document.createElement("div");
@@ -71,25 +66,6 @@ function donationCalc(donateBtn, leftMoney, totalDonate, donation){
                 `;
             };
 
-
-
-            
-
-            // const historyItem = document.createElement("div");
-            // historyItem.className = 'bg-white p-3 rounded-md border-l-2 border-indigo-500';
-            /*
-            historyItem.innerHTML=`
-              <p>Transaction Number: ${count}</p>
-              <p class="text-xs text-gray-500">${new Date().toLocaleDateString()}</p>
-
-              <p class="text-xs text-gray-500">
-                    ${donation} ${donationReason}
-              </p>
-
-              
-
-              
-            `;*/
             const historyContainer = document.getElementById("transaction-list");
             historyContainer.insertBefore(historyItem, historyContainer.firstChild);
 
