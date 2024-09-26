@@ -10,7 +10,7 @@ function textValue(id){
    return textValue;
 }
 
-
+// donation calculation 
 function donationCalc(donateBtn, leftMoney, totalDonate, donation){
     document.getElementById(donateBtn).addEventListener("click", function(){
         let totalBalance = textValue(leftMoney);
@@ -28,15 +28,20 @@ function donationCalc(donateBtn, leftMoney, totalDonate, donation){
         else{
             alert("invalid")
         }
-    
-        // console.table(totalBalance,totalDonation,myDonation);
     })
     return(donateBtn, leftMoney, totalDonate, donation);
 }
 
+
+//  Noakhali donation calculation
 donationCalc("donateBtn1", "left-money", "totalDonate1", "donation1");
+
+// Feni donation calculation
 donationCalc("donateBtn2", "left-money", "totalDonate2", "donation2");
+
+// Quota Movement donation calculation
 donationCalc("donateBtn3", "left-money", "totalDonate3", "donation3");
+
 
 
 
