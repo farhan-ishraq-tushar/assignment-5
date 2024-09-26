@@ -15,7 +15,7 @@
 </head>
 <body class="font-[lexend]">
     <main class="py-4 md:py-10">
-            <h2 class="font-extrabold text-lime-500 text-2xl md:text-5xl text-center py-4">
+            <h2 class="font-extrabold text-lime-500 text-3xl md:text-5xl text-center py-4">
               Frequently Asked Questions</h2>
             <div class="flex flex-col items-center justify-center gap-10 px-4 pb-8 md:py-8"> 
                 
@@ -24,35 +24,29 @@
   
               <div class="collapse collapse-arrow  bg-lime-100 border border-btn_green2">
                 <input type="radio" name="my-accordion-2" />
-                <div class="collapse-title text-lg md:text-xl font-medium">What services do we offer?
+                <div class="collapse-title text-lg md:text-xl font-medium">What is the Document Object Model (DOM)?
                 </div>
                 <div class="collapse-content">
                   <p>
-                     We offer a range of services including architectural design, interior design, landscape design, and project management for both residential and commercial projects.
-  
+                    The Document Object Model (DOM) connects web pages to scripts or programming languages by representing the structure of a document—such as the HTML representing a web page—in memory. Usually it refers to JavaScript, even though modeling HTML, SVG, or XML documents as objects are not part of the core JavaScript language.
                   </p>
                 </div>
               </div>
   
               <div class="collapse collapse-arrow  bg-lime-100 border border-btn_green2">
                 <input type="radio" name="my-accordion-2" />
-                <div class="collapse-title text-lg md:text-xl font-medium">How do we charge for your projects?
+                <div class="collapse-title text-lg md:text-xl font-medium">How do you select an element from the DOM?
                 </div>
                 <div class="collapse-content">
                   <p>
-                    Fees can vary based on the scope and complexity of the project. Some firms charge a fixed fee, while others may charge an hourly rate or a percentage of the total project cost.
-                  </p>
-                </div>
-              </div>
-  
-              <div class="collapse collapse-arrow  bg-lime-100 border border-btn_green2">
-                <input type="radio" name="my-accordion-2" />
-                <div class="collapse-title text-lg md:text-xl font-medium">
-                  Do you need planning permission for your project?
-                </div>
-                <div class="collapse-content">
-                  <p>
-                    This depends on the nature of your project and local regulations.
+                    There are several ways to select element from DOM. For example:
+                    <ol class="list-disc font-bold px-4 py-2">
+                      <li>Using getElementById</li>
+                      <li>Using getElementsByClassName</li>
+                      <li>Using getElementsByTagName</li>
+                      <li>Using querySelector</li>
+                      <li>Using querySelectorAll</li>
+                    </ol class="list-decimal px-4">
                   </p>
                 </div>
               </div>
@@ -60,11 +54,10 @@
               <div class="collapse collapse-arrow  bg-lime-100 border border-btn_green2">
                 <input type="radio" name="my-accordion-2" />
                 <div class="collapse-title text-lg md:text-xl font-medium">
-                  What is the difference between planning permission and building control approval?
+                  What is event delegation in the context of the DOM, and why is it useful?
                 </div>
                 <div class="collapse-content">
-                  <p>
-                    Planning permission relates to the use and appearance of the building, while building control approval ensures that the construction meets safety and performance standards.
+                  <p>Event Delegation is a pattern based upon the concept of Event Bubbling. It is an event-handling pattern that allows you to handle events at a higher level in the DOM tree other than the level where the event was first received. Event Delegation is a useful pattern that allows you to write cleaner code, and create fewer event listeners with similar logic.
                   </p>
                 </div>
               </div>
@@ -72,36 +65,49 @@
               <div class="collapse collapse-arrow  bg-lime-100 border border-btn_green2">
                 <input type="radio" name="my-accordion-2" />
                 <div class="collapse-title text-lg md:text-xl font-medium">
-                  Do we help with interior design as well?
+                  How do you manipulate an element's attributes and styles using the DOM?
                 </div>
                 <div class="collapse-content">
-                  <p>
-                    Yes, we offer comprehensive services that include interior design to ensure that the interior spaces are functional and aesthetically pleasing.
+                  <p class="font-bold">
+                    The below DOM properties can be used to change the HTML and the text content of the HTML elements.
                   </p>
-                </div>
-              </div>
-  
-              <div class="collapse collapse-arrow  bg-lime-100 border border-btn_green2">
-                <input type="radio" name="my-accordion-2" />
-                <div class="collapse-title text-lg md:text-xl font-medium">
-                  How long does the design process take?
-                </div>
-                <div class="collapse-content">
-                  <p>
-                    The timeline can vary depending on the project’s complexity. Initial design stages might take a few weeks, while the entire process, including construction, can take several months.
+                    <ol class="list-disc px-4 py-2">
+
+                      <li>
+                        textContent: The textContent property is used to set and get the text content and it’s descendants.
+                      </li>
+                        
+                      <li>
+                        innerHTML: The innerHTML property is used to get and set the text and HTML inside an HTML element.
+                      </li>
+
+                      <li>
+                        innerText: The innerText property represents the rendered text content of a node and its descendants. It is aware of the elements which will be rendered and ignores the hidden elements.
+                      </li>
+                    </ol>
+
+
+
+
+                  <p class="pt-5 font-bold">
+                    The below DOM properties can be used to manipulate the CSS of the HTML elements.
                   </p>
-                </div>
-              </div>
-  
-              <div class="collapse collapse-arrow  bg-lime-100 border border-btn_green2">
-                <input type="radio" name="my-accordion-2" />
-                <div class="collapse-title text-lg md:text-xl font-medium">
-                  What should I expect during the first consultation?
-                </div>
-                <div class="collapse-content">
-                  <p>
-                    The first consultation typically involves discussing your needs, preferences, and budget. The designer will also assess the site and provide initial ideas and a fee proposal.
-                  </p>
+
+                    <ol class="list-disc px-4 py-2">
+
+                      <li>
+                        style: CSS can be manipulated using (Syntax : element.style.propertyName) which helps us to dynamically manipulate styles and access the inline styles of an element.
+                      </li>
+
+                      <li>
+                        cssText: CSS can be directly manipulated using the cssText property of the style object to set multiple inline styles at a time. It is similar to how we add inline CSS to an element.
+                      </li>
+
+                      <li>
+                        classList: As Inline CSS is not recommended, mostly we use classList property to dynamically add and remove CSS classes which are defined in external CSS.
+                      </li>
+                    </ol>
+
                 </div>
               </div>
   
