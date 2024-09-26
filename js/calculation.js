@@ -143,10 +143,10 @@ function donationCalc(donateBtn, leftMoney, totalDonate, donation, modalOpen, mo
 // Local calculations
 
 //  Noakhali donation calculation
-donationCalc("donateBtn1", "left-money", "totalDonate1", "donation1");
+donationCalc("donateBtn1", "left-money", "totalDonate1", "donation1", "modalOpen1", "modalClose1");
 
 // Feni donation calculation
-donationCalc("donateBtn2", "left-money", "totalDonate2", "donation2");
+donationCalc("donateBtn2", "left-money", "totalDonate2", "donation2", "modalOpen2", "modalClose2");
 
 // Quota Movement donation calculation
 donationCalc("donateBtn3", "left-money", "totalDonate3", "donation3", "modalOpen3", "modalClose3");
