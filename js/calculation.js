@@ -31,10 +31,8 @@ function donationCalc(donateBtn, leftMoney, totalDonate, donation, modalOpen, mo
 
              //  Modal integration
             //  Modal Opening
-            // document.getElementById("body").classList.add('bg-gray-300', 'opacity-30');
              document.getElementById(modalOpen).classList.remove('hidden');
              document.getElementById("blur").classList.remove('hidden');
-            //  document.getElementsByTagName("body").classList.add('blur-md');
             
             //  Modal Closing 
             document.getElementById(modalClose).addEventListener('click', function() {
@@ -48,7 +46,7 @@ function donationCalc(donateBtn, leftMoney, totalDonate, donation, modalOpen, mo
 
             // let donationReason = '';
             if(donation === "donation1"){
-                // donationReason === "Taka is Donated for Flood Relief in Noakhali,Bangladesh";
+                
                 historyItem.innerHTML = `
 
                 <p class="text-xs md:text-base text-gray-500">
