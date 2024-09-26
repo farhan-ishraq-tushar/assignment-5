@@ -11,13 +11,14 @@ function textValue(id){
 }
 
 // donation calculation 
-function donationCalc(donateBtn, leftMoney, totalDonate, donation){
+function donationCalc(donateBtn, leftMoney, totalDonate, donation, modalOpen, modalClose){
     document.getElementById(donateBtn).addEventListener("click", function(){
 
         let totalBalance = textValue(leftMoney);
         let totalDonation = textValue(totalDonate);
         let myDonation = inputValue(donation); 
 
+        // validation condition
         if(!isNaN(myDonation) && myDonation > 0 && totalBalance > myDonation){
             
             // Donation amount calcualtion
@@ -28,16 +29,28 @@ function donationCalc(donateBtn, leftMoney, totalDonate, donation){
              document.getElementById(totalDonate).innerText = totalDonation;
              document.getElementById(donation).value = '';
 
+             //  Modal integration
+            //  Modal Opening
+             document.getElementById(modalOpen).classList.remove('hidden');
+            
+            //  Modal Closing 
+            document.getElementById(modalClose).addEventListener('click', function() {
+                document.getElementById(modalOpen).classList.add('hidden');
+            });
+
             //  History part
             const historyItem = document.createElement("div");
-            historyItem.className = 'bg-white p-3 rounded-md border-l-2 border-indigo-500';
+            historyItem.className = 'bg-white p-3 rounded-md border-l-2 border-lime-500';
 
             // let donationReason = '';
             if(donation === "donation1"){
                 // donationReason === "Taka is Donated for Flood Relief in Noakhali,Bangladesh";
                 historyItem.innerHTML = `
-                <p class="text-xs text-gray-500">${new Date().toLocaleDateString()}</p>
 
+                <p class="text-xs md:text-base text-gray-500">
+                    ${new Date().toUTCString()} +06:00 (Bangladesh Standard Time) 
+                </p>
+                
                 <p class="text-base md:text-xl text-black font-semibold">
                 ${myDonation} Taka is Donated for Flood Relief in Noakhali,Bangladesh
                 </p>
@@ -47,7 +60,10 @@ function donationCalc(donateBtn, leftMoney, totalDonate, donation){
 
             else if(donation === "donation2"){
                 historyItem.innerHTML = `
-                <p class="text-xs text-gray-500">${new Date().toLocaleDateString()}</p>
+                  
+                <p class="text-xs md:text-base text-gray-500">
+                    ${new Date().toUTCString()} +06:00 (Bangladesh Standard Time) 
+                </p>
 
                 <p class="text-base md:text-xl text-black font-semibold">
                 ${myDonation} Taka is Donated for Flood Relief in Feni,Bangladesh
@@ -58,7 +74,10 @@ function donationCalc(donateBtn, leftMoney, totalDonate, donation){
             
             else{
                 historyItem.innerHTML = `
-                <p class="text-xs text-gray-500">${new Date().toLocaleDateString()}</p>
+                  
+                <p class="text-xs md:text-base text-gray-500">
+                    ${new Date().toUTCString()} +06:00 (Bangladesh Standard Time) 
+                </p>
 
                 <p class="text-base md:text-xl text-black font-semibold">
                 ${myDonation} Taka is Donated for Aid for Injured in the Quota Movement, Bangladesh
@@ -130,7 +149,10 @@ donationCalc("donateBtn1", "left-money", "totalDonate1", "donation1");
 donationCalc("donateBtn2", "left-money", "totalDonate2", "donation2");
 
 // Quota Movement donation calculation
-donationCalc("donateBtn3", "left-money", "totalDonate3", "donation3");
+donationCalc("donateBtn3", "left-money", "totalDonate3", "donation3", "modalOpen3", "modalClose3");
+
+
+
 
 
 
