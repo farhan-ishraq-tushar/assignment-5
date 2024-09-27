@@ -25,8 +25,8 @@ function donationCalc(donateBtn, leftMoney, totalDonate, donation, modalOpen, mo
              leftBalance = totalBalance - myDonation;
              totalBalance = leftBalance;
              totalDonation = myDonation + totalDonation;
-             document.getElementById(leftMoney).innerText = totalBalance;
-             document.getElementById(totalDonate).innerText = totalDonation;
+             document.getElementById(leftMoney).innerText = totalBalance.toFixed(2);
+             document.getElementById(totalDonate).innerText = totalDonation.toFixed(2);
              document.getElementById(donation).value = '';
 
              //  Modal integration
@@ -54,7 +54,7 @@ function donationCalc(donateBtn, leftMoney, totalDonate, donation, modalOpen, mo
                 </p>
                 
                 <p class="text-base md:text-xl text-black font-semibold">
-                ${myDonation} Taka is Donated for Flood Relief in Noakhali,Bangladesh
+                ${myDonation.toFixed(2)} Taka is Donated for Flood Relief in Noakhali,Bangladesh
                 </p>
 
                 `;
@@ -140,6 +140,7 @@ function donationCalc(donateBtn, leftMoney, totalDonate, donation, modalOpen, mo
         document.getElementById("footer").classList.add('hidden');
 
     })
+
 
 
 // Local calculations
